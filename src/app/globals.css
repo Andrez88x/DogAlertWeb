@@ -27,13 +27,13 @@ body {
   font-family: var(--font-body), "Trebuchet MS", sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading), "Trebuchet MS", sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-comic), "Trebuchet MS", sans-serif;
+}
+
+/* Custom font-comic utility for Tailwind */
+.font-comic {
+  font-family: var(--font-comic), "Architects Daughter", cursive;
 }
 
 * {
@@ -138,8 +138,7 @@ h6 {
 }
 
 @keyframes floaty {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0px);
   }
   50% {
