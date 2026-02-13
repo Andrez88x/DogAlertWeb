@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg-sky: #cdefff;
+  --bg-cream: #fff9ec;
+  --ink: #0f2940;
+  --line: #1f3d5a;
+  --accent: #ff8a3d;
+  --accent-2: #1cb0f6;
+  --mint: #92e6a7;
+  --sun: #ffd95d;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 15%, #ffffffc8 0 8%, transparent 9%),
+    radial-gradient(circle at 16% 14%, #ffffffc8 0 5%, transparent 6%),
+    radial-gradient(circle at 88% 16%, #ffffffc8 0 9%, transparent 10%),
+    radial-gradient(circle at 78% 14%, #ffffffc8 0 5%, transparent 6%),
+    linear-gradient(180deg, var(--bg-sky) 0%, #dcf6ff 42%, var(--bg-cream) 100%);
+  font-family: var(--font-body), "Trebuchet MS", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), "Trebuchet MS", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.cartoon-shell {
+  position: relative;
+}
+
+.cartoon-shell::before,
+.cartoon-shell::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  border: 3px solid var(--line);
+  border-radius: 999px;
+  filter: drop-shadow(0 8px 0 rgba(0, 0, 0, 0.06));
+}
+
+.cartoon-shell::before {
+  width: 180px;
+  height: 180px;
+  top: 78px;
+  right: -42px;
+  background: var(--sun);
+}
+
+.cartoon-shell::after {
+  width: 140px;
+  height: 140px;
+  bottom: 96px;
+  left: -34px;
+  background: var(--mint);
+}
+
+.cartoon-card {
+  border: 3px solid var(--line);
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 9px 0 #9dc7db;
+}
+
+.cartoon-input {
+  width: 100%;
+  border-radius: 14px;
+  border: 2px solid #8bb3cb;
+  padding: 0.65rem 0.8rem;
+  background: #fffefb;
+  outline: none;
+}
+
+.cartoon-input:focus {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 3px #1cb0f640;
+}
+
+.cartoon-btn {
+  border: 3px solid var(--line);
+  border-radius: 16px;
+  font-weight: 800;
+  transition: transform 0.12s ease;
+}
+
+.cartoon-btn:hover {
+  transform: translateY(-2px);
+}
+
+.cartoon-btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 5px 0 #c55c16;
+}
+
+.btn-secondary {
+  background: var(--accent-2);
+  color: #fff;
+  box-shadow: 0 5px 0 #1376a3;
+}
+
+.btn-ghost {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 5px 0 #b6d4e4;
+}
+
+.pill {
+  border-radius: 999px;
+  border: 2px solid var(--line);
+  padding: 0.22rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.leaflet-container {
+  border-radius: 24px;
+  border: 3px solid var(--line);
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.animate-floaty {
+  animation: floaty 4s ease-in-out infinite;
+}
+
+.animate-pop {
+  animation: popIn 0.45s ease-out both;
+}
