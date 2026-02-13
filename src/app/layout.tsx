@@ -1,29 +1,29 @@
 import type { Metadata } from "next";
-import { Baloo_2, Nunito } from "next/font/google";
+import { Architects_Daughter, Nunito } from "next/font/google";
 import "leaflet/dist/leaflet.css";
 import "./globals.css";
 
-const baloo = Baloo_2({
+const architects = Architects_Daughter({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-heading"
+  weight: ["400"],
+  variable: "--font-comic"
 });
 
 const nunito = Nunito({
   subsets: ["latin"],
-  weight: ["500", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-body"
 });
 
 export const metadata: Metadata = {
-  title: "Dog Alert Web",
-  description: "Melde Giftkoeder und warne andere Hundebesitzer in deiner Umgebung."
+  title: "Dog Alert - Schütze deinen Hund vor Giftködern",
+  description: "Die Community-App, die Hundebesitzer zusammenbringt. Melde Gefahren, werde gewarnt, rette Leben."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de">
-      <body className={`${baloo.variable} ${nunito.variable} cartoon-shell`}>
+      <body className={`${architects.variable} ${nunito.variable} font-sans`}>
         {children}
       </body>
     </html>
